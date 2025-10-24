@@ -1,0 +1,14 @@
+.button {
+  all: unset;  
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon { 
+  display: inline-flex;
+}
+
+.text {
+  display: inline-flex;
+}

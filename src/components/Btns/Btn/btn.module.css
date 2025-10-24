@@ -1,0 +1,20 @@
+.btn {
+  background-color: var(--control-secondary); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border-radius: 100px; 
+  gap: 5;
+}
+
+.btn:active {
+  background-color: #ffffff1a;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  color: #999;
+  background-color: #ffffff0d;
+  transform: none;
+}

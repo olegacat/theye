@@ -1,0 +1,50 @@
+.inputArea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 40px;
+  min-height: 92px;
+  max-height: 190px;
+}
+
+.input {
+  width: 100%;
+  min-height: 92px;
+  max-height: 190px;
+  resize: none;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 8px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  overflow-y: hidden;  
+
+}
+
+.inputArea_actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.addResize,
+.animate {
+  font-weight: 500;
+  font-size: 18px; 
+  color: var(--text-primary);
+  border: none;
+  gap: 5px; 
+  padding: 14px; 
+  cursor: pointer;
+  white-space: nowrap;
+}
