@@ -16,7 +16,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
 }) => {
   return (
     <button className={styles.button} onClick={onClick}>
-      <Icon name={name} className={styles.icon} />
+      <Icon name={name} className={styles.button} cursor={"pointer"}/>
       {children && <span className={styles.text}>{children}</span>}
     </button>
   );

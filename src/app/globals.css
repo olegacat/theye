@@ -6,7 +6,10 @@
   --text-primary: #F6F4FF;
   --bg-secondary: #2D2C30;
 
+  --control-primary:#CDCBF2;
   --control-secondary:#46444B;
+
+  --text-inver:#1A1A1A;
 }
 
 @media (prefers-color-scheme: dark) {

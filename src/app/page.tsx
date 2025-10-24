@@ -13,10 +13,10 @@ export default function Home() {
         <div className={styles.sidebar_top}>
           <div className={styles.header}>
             <div className={styles.header_title}>
-              <Icon name="MenuBtn" />
+              <IconButton name={"MenuBtn"}/>
               <span className={styles.projectName}>New Project</span>
             </div>
-            <Icon name="RightBtn" />
+            <IconButton name={"RightBtn"}/>
           </div>
 
           <div className={styles.message}>
@@ -38,10 +38,10 @@ export default function Home() {
       {/* Правая панель */}
       <main className={styles.main}>
         <div className={styles.toolbar}>
-          <Btn className={styles.toolbarBtn}><Icon name="ResizeIcon"/>Resizes</Btn>
+          <Btn className={styles.toolbarBtn}><Icon name="ResizeIcon" cursor={"pointer"}/>Resizes</Btn>
           <div className={styles.rightBtns}>
-            <Btn className={styles.toolbarBtn}><Icon name="ResizeIcon"/> Preview</Btn>
-            <Btn className={styles.exportBtn}><Icon name="ResizeIcon"/> Export</Btn>
+            <Btn className={styles.toolbarBtn}><Icon name="PlayIcon" cursor={"pointer"} /> Preview</Btn>
+            <Btn className={styles.exportBtn}><Icon name="ExportIcon" cursor={"pointer"}/> Export</Btn>
           </div>
         </div>
 

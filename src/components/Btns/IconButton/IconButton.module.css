@@ -7,6 +7,7 @@
 
 .icon { 
   display: inline-flex;
+  cursor: pointer;
 }
 
 .text {

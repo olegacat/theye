@@ -101,19 +101,7 @@
 .inputArea_actions{
 display: flex;
 }
-
-.addResize,
-.animate {
-  background: #2b2b30;
-  color: #ccc;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 13px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
+ 
 /*  Правая панель  */
 .main {
   width: 60%;
@@ -134,20 +122,22 @@ display: flex;
 }
 
 .toolbarBtn { 
-  border: none;
-  border-radius: 8px;
+  border: none; 
   padding: 14px;
   color: var(--text-primary);
   cursor: pointer;
-  width: auto;
+  width: auto;   
+  background-color: var(--control-secondary); 
+  font-size: 18px;
 }
 
 .exportBtn {
   border: none;
-  border-radius: 8px;
-  padding: 6px 12px;
-  color: white;
-  font-weight: 600;
+  background-color: var(--control-primary); 
+  padding: 14px; 
+  color: var(--text-inver);
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .rightBtns {
