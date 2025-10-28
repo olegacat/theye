@@ -32,7 +32,7 @@ const FigmaMock = () => {
        
 
   </div>
-    <LoadModal/>
+    <LoadModal onFinish={()=>{}}/>
         {/* Нижний летающий тулбар */}
         <div className={styles.bottomBar}>
           <Image src={bottomImg} alt="Bottom Bar" className={styles.bottomImg} /> 

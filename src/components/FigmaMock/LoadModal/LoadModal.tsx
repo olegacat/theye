@@ -7,7 +7,7 @@ import styles from "./LoadModal.module.css";
 import CloseIcon from "./close.svg";
 import FrameIcon from "./frame.svg";
 
-const LoadModal = ({ onFinish }) => {
+const LoadModal = ({ onFinish }: {onFinish: ()=>{} | any}) => {
   const [stage, setStage] = useState(0); // 0 = idle, 1 = loading, 2 = done
   const [buttonPressed, setButtonPressed] = useState(false);
 
