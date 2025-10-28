@@ -5,8 +5,8 @@ import Image from "next/image";
 import styles from "./FigmaMock.module.css";
 
 // импорт картинок из текущей папки
-import rightImg from "./right.jpg";
-import leftImg from "./left.jpg";
+import rightImg from "./right.png";
+import leftImg from "./left.png";
 import bottomImg from "./bottom.jpg";
 import airpods from "@/assets/airpods.svg";
 import LoadModal from "./LoadModal/LoadModal";
