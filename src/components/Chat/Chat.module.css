@@ -35,18 +35,7 @@
   align-items: center;
   gap: 12px;
 }
-
-.message {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #cfcfcf;
-}
-
-.actions {
-  display: flex;
-  gap: 20px;
-  margin-top: 16px;
-}
+ 
 
 .inputArea {
   position: relative;
@@ -107,8 +96,7 @@ display: flex;
 .toolbarBtn { 
   border: none; 
   padding: 14px;
-  color: var(--text-primary);
-  cursor: pointer;
+  color: var(--text-primary); 
   width: auto;   
   background-color: var(--control-secondary); 
   font-size: 18px;
@@ -122,6 +110,7 @@ display: flex;
   font-weight: 700;
   font-size: 18px;
 }
+ 
 
 .rightBtns {
   display: flex;

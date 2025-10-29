@@ -4,10 +4,11 @@
   align-items: center; 
   border-radius: 100px; 
   gap: 5;
+  cursor: pointer;
 }
 
 .btn:active {
-  background-color: #ffffff1a;
+    filter: brightness(0.9); 
 }
 
 .btn:disabled {

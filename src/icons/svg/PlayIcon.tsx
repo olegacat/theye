@@ -10,7 +10,7 @@ export const PlayIcon = ({ width = 20, height = 20 }: TIcon) => {
       viewBox="0 0 20 20"
       fill="none"
     >     
-<path d="M4.16666 2.5L15.8333 10L4.16666 17.5V2.5Z" stroke="#F6F4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.16666 2.5L15.8333 10L4.16666 17.5V2.5Z" stroke="#F6F4FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
   );
 };

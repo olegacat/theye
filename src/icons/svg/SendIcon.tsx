@@ -12,7 +12,7 @@ export const SendIcon = ({ width = 48, height = 48 }: TIcon) => {
     >
   
 <rect width="48" height="48" rx="24" fill="#CDCBF2"/>
-<path d="M24 31V17M24 17L17 24M24 17L31 24" stroke="#1A1A1A" stroke-width="2.41667" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24 31V17M24 17L17 24M24 17L31 24" stroke="#1A1A1A" strokeWidth="2.41667" strokeLinecap="round" strokeLinejoin="round"/>
 </svg> 
   );
 };

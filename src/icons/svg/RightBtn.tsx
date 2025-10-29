@@ -21,8 +21,8 @@ export const RightBtn = ({ width = 48, height = 48 }: TIcon) => {
         ></div>
       </foreignObject>
       <g data-figma-bg-blur-radius="32.6">
-        <rect width="48" height="48" rx="24" fill="white" fill-opacity="0.08" />
-        <g clip-path="url(#clip1_492_198)">
+        <rect width="48" height="48" rx="24" fill="white" fillOpacity="0.08" />
+        <g clipPath="url(#clip1_492_198)">
           <rect
             x="15.25"
             y="15.25"
@@ -30,9 +30,9 @@ export const RightBtn = ({ width = 48, height = 48 }: TIcon) => {
             height="17.5"
             rx="4.75"
             stroke="#87858E"
-            stroke-width="2.5"
+            strokeWidth="2.5"
           />
-          <path d="M26 18V29.5" stroke="#87858E" stroke-width="2.5" />
+          <path d="M26 18V29.5" stroke="#87858E" strokeWidth="2.5" />
         </g>
       </g>
       <defs>

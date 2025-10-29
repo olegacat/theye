@@ -6,7 +6,12 @@ import Btn from "@/components/Btns/Btn/Btn";
 import Icon from "@/icons/Icon";
 import { IconButton } from "../Btns/IconButton/IconButton";
 
-export const ChatInputArea: React.FC = () => {
+interface IChatInputArea {
+  onClickResize: () => void
+}
+
+
+export const ChatInputArea: React.FC<IChatInputArea> = ({onClickResize}) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
 
@@ -33,7 +38,7 @@ export const ChatInputArea: React.FC = () => {
 
       <div className={styles.inputArea_actions}>
         <div className={styles.buttons}>
-          <Btn className={styles.addResize}><Icon name="ResizeIcon"/> Add Resize</Btn>
+          <Btn className={styles.addResize} onClick={onClickResize}><Icon name="ResizeIcon"/> Add Resize</Btn>
           <Btn className={styles.animate}><Icon name="AnimateIcon"/> Animate</Btn>
         </div>
                <IconButton name="SendIcon" /> 

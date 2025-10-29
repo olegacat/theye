@@ -1,0 +1,105 @@
+.modalresize_wrapper {
+  background-color: #343337;
+  border-radius: 40px;
+  box-shadow: 0px 22px 57.3px 0px #00000061;
+  display: none;
+
+  position: absolute;
+  left: 18px;
+  bottom: 121px;
+  z-index: 2;
+  min-width: 406px;
+  min-height: 536px;
+}
+
+.modalresize_options{
+
+}
+
+.modalresize_wrapper.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalresize_top {
+  padding: 24px 0 16px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid var(--border-secondary);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.modalresize_top input[type="text"] {
+  flex: 1; 
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 4px 0;
+}
+
+.modalresize_top input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+ 
+.sectionTitle {
+  color: var(--text-primary);
+  padding: 16px 16px 8px 16px;
+  font-weight: 700; 
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.option {
+  display: flex;
+  font-size: 18px;
+  font-weight: 400; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 8px; 
+}
+
+ 
+
+.optionText {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.optionName {
+  color: #fff;
+}
+
+.optionSize {
+  color: #9d9d9d;
+  font-size: 15px;
+  margin-left: 12px;
+}
+
+.checkWrapper {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #c8c8ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected .checkWrapper {
+  border: 1px solid #c8c8ff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.selected {
+  color: #c8c8ff;
+}

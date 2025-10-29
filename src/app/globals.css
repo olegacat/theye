@@ -5,9 +5,12 @@
   --bg-primary: #1A1A1A;
   --text-primary: #F6F4FF;
   --bg-secondary: #2D2C30;
+  --bg-accent: #36314C;
 
   --control-primary:#CDCBF2;
   --control-secondary:#46444B;
+
+  --border-secondary:#39393E;
 
   --text-inver:#1A1A1A;
 }
@@ -28,7 +31,7 @@ body {
 body {
   color: var(--foreground);
   background: rgb(177, 177, 177);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Cabin, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
