@@ -1,0 +1,26 @@
+.message_thinking_wrapper {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  gap: 12px;
+ 
+  background: linear-gradient(90deg, #7A7188 0%, #171313 160.89%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;  
+  color: transparent;   
+font-weight: 500; 
+font-size: 18px; 
+line-height: 28px; 
+
+  animation: blinkText 2s infinite;  
+}
+
+@keyframes blinkText {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0.7;
+  }
+}

@@ -2,23 +2,60 @@
   background-color: #343337;
   border-radius: 40px;
   box-shadow: 0px 22px 57.3px 0px #00000061;
-  display: none;
-
+  
   position: absolute;
   left: 18px;
   bottom: 121px;
   z-index: 2;
   min-width: 406px;
   min-height: 536px;
-}
-
-.modalresize_options{
-
+ 
+  opacity: 0;
+  transform: translateY(20px);  
+  pointer-events: none;  
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .modalresize_wrapper.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;  
+}
+
+
+.modalresize_add_btn {
+  all: unset;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  gap: 4px;
+  background-color: var(--control-primary);
+  padding: 10px 17px 10px 12px;
+  position: absolute;
+  bottom: 16px;
+  color: var(--text-invert);
+  right: 16px;
+}
+
+.checkSize {
+
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.modalresize_add_btn.active {
+  display: flex;
+  animation: pulseBorder8 1.2s infinite ease-in-out; 
+}
+
+.modalresize_add_btn:active {
+  filter: brightness(0.8);
 }
 
 .modalresize_top {
@@ -31,7 +68,7 @@
 }
 
 .modalresize_top input[type="text"] {
-  flex: 1; 
+  flex: 1;
   font-weight: 500;
   font-size: 18px;
   line-height: 28px;
@@ -46,11 +83,11 @@
   color: var(--text-secondary);
   opacity: 0.6;
 }
- 
+
 .sectionTitle {
   color: var(--text-primary);
   padding: 16px 16px 8px 16px;
-  font-weight: 700; 
+  font-weight: 700;
   font-size: 18px;
   line-height: 28px;
 }
@@ -58,21 +95,18 @@
 .option {
   display: flex;
   font-size: 18px;
-  font-weight: 400; 
+  font-weight: 400;
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
   cursor: pointer;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
-
- 
 
 .optionText {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 16px;
+  gap: 6px; 
 }
 
 .optionName {
@@ -81,7 +115,7 @@
 
 .optionSize {
   color: #9d9d9d;
-  font-size: 15px;
+  font-size: 14px;
   margin-left: 12px;
 }
 
@@ -93,6 +127,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
+}
+.checkWrapper.notChosen{
+animation: pulseBorder2 1.5s infinite ease-in-out; 
+}
+
+
+@keyframes pulseBorder2 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); 
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7); 
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 200, 255, 1); 
+  }
+}
+
+@keyframes pulseBorder8 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1); 
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 1); 
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(255, 255, 255); 
+  }
 }
 
 .selected .checkWrapper {

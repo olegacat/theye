@@ -1,4 +1,3 @@
-
 /* Основной контейнер страницы */
 .wrapper {
   display: flex;
@@ -35,7 +34,6 @@
   align-items: center;
   gap: 12px;
 }
- 
 
 .inputArea {
   position: relative;
@@ -48,11 +46,11 @@
   border-radius: 40px;
   min-height: 192px;
 }
- 
+
 .input {
   width: 100%;
-  height: auto; 
-  max-height: 450px; 
+  height: auto;
+  max-height: 450px;
   border: none;
   background: transparent;
   padding-left: 8px;
@@ -60,20 +58,23 @@
   outline: none;
   font-weight: 500;
   font-size: 18px;
-  resize: none;   
+  resize: none;
 }
 
- 
-
+.messages {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
 .buttons {
   display: flex;
   gap: 8px;
 }
 
-.inputArea_actions{
-display: flex;
+.inputArea_actions {
+  display: flex;
 }
- 
+
 /*  Правая панель  */
 .main {
   width: 60%;
@@ -93,31 +94,29 @@ display: flex;
   margin-bottom: 16px;
 }
 
-.toolbarBtn { 
-  border: none; 
+.toolbarBtn {
+  border: none;
   padding: 14px;
-  color: var(--text-primary); 
-  width: auto;   
-  background-color: var(--control-secondary); 
+  color: var(--text-primary);
+  width: auto;
+  background-color: var(--control-secondary);
   font-size: 18px;
 }
 
 .exportBtn {
   border: none;
-  background-color: var(--control-primary); 
-  padding: 14px; 
-  color: var(--text-inver);
+  background-color: var(--control-primary);
+  padding: 14px;
+  color: var(--text-invert);
   font-weight: 700;
   font-size: 18px;
 }
- 
 
 .rightBtns {
   display: flex;
   gap: 8px;
 }
 
-/*  Баннер  */
 .banner {
   flex: 1;
   display: flex;
@@ -127,4 +126,56 @@ display: flex;
 
 .image {
   object-fit: contain;
+}
+.generatedGrid_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 43px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.generatedGrid {
+    flex-flow: column wrap;
+    gap: 12px;
+    max-width: 80%;
+    display: flex;
+    align-content: center;
+}
+
+.gridItem {
+  max-width: 40%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+ 
+.generatedGrid:has(.gridItem:only-child) {
+  flex-direction: row;  
+  justify-content: center;
+        height: fit-content;
+}
+
+.generatedGrid:has(.gridItem:only-child) .gridItem {
+  max-width: 100%;
+
+}
+
+.gridItem_title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1%;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.gridImage {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  display: block;
 }

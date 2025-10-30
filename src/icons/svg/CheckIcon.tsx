@@ -11,7 +11,7 @@ export const CheckIcon = ({ width = 28, height = 28 }: TIcon) => {
       fill="none"
     >     
 <rect width="28" height="28" rx="10" fill="#CDCBF2"/>
-<path d="M20.6667 9L11.5 18.1667L7.33334 14" stroke="#1A1A1A" stroke-width="2.66667"/>
+<path d="M20.6667 9L11.5 18.1667L7.33334 14" stroke="#1A1A1A" strokeWidth="2.66667"/>
 </svg>
   );
 };

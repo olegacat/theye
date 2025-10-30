@@ -1,6 +1,7 @@
-import styles from "./MessageLeft.module.css";
+import styles from "./MessageThinking.module.css";
 import React, { useEffect, useState } from "react";
 import { IconButton } from "@/components/Btns/IconButton/IconButton";
+import Icon from "@/icons/Icon";
 
 interface MessageLeftProps {
   message: string;
@@ -8,7 +9,7 @@ interface MessageLeftProps {
   delayAfter?: number;  
 }
 
-export const MessageLeft: React.FC<MessageLeftProps> = ({ message, onFinished, delayAfter = 500 }) => {
+export const MessageThinking: React.FC<MessageLeftProps> = ({ message, onFinished, delayAfter = 500 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isFinished, setIsFinished] = useState(false);
 
@@ -28,7 +29,7 @@ export const MessageLeft: React.FC<MessageLeftProps> = ({ message, onFinished, d
     }
 
     const coef = 1 + len / 150;
-    const totalDuration = coef * 1000;
+    const totalDuration = coef * 500;
     const intervalTime = totalDuration / len;
 
     const draw = () => {
@@ -54,13 +55,8 @@ export const MessageLeft: React.FC<MessageLeftProps> = ({ message, onFinished, d
   }, [message, onFinished, delayAfter]);
 
   return (
-    <div className={styles.message_left}>
-      <div className={styles.message}>{displayedText}</div>
-      <div className={`${styles.actions} ${isFinished ? styles.active : ""}`}>
-        <IconButton name="ThumbUp" />
-        <IconButton name="ThumbDown" />
-        <IconButton name="RefreshIcon" />
-      </div>
+    <div className={styles.message_thinking_wrapper}>
+     <Icon name={"TwoStartsIcon"}/> <div className={styles.message}>Resizing {displayedText}...</div> 
     </div>
   );
 };

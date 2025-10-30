@@ -6,7 +6,7 @@
   padding: 16px;
   background: var(--bg-secondary);
   border-radius: 40px;
-  min-height: 92px;
+  min-height: 192px;
   max-height: 190px;
 }
 
@@ -22,8 +22,38 @@
   color: white;
   font-size: 18px;
   font-weight: 500;
-  overflow-y: hidden;  
+  overflow-y: hidden;
+}
 
+.selected_sizes_title {
+  gap: 8px;
+  margin-right: 8px;
+  margin-top: 6.5px;
+  display: flex;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+
+.selected_sizes_wrapper {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.selected_sizes_option {
+  background-color: var(--bg-tertiary);
+  padding: 6px 11px 7px 16px;
+  display: flex;
+  gap: 3px;
+  border-radius: 41px;
+}
+
+.inputArea_selected_sizes {
+  display: none;
+}
+
+.inputArea_selected_sizes.active {
+  display: flex;
 }
 
 .inputArea_actions {
@@ -40,12 +70,31 @@
 .addResize,
 .animate {
   font-weight: 500;
-  font-size: 18px; 
+  font-size: 18px;
   color: var(--text-primary);
   border: none;
-  gap: 5px; 
-  padding: 14px; 
+  gap: 5px;
+  padding: 14px;
   cursor: pointer;
   white-space: nowrap;
-    background-color: var(--control-secondary); 
+  background-color: var(--control-secondary);
+}
+
+
+.sendResizeOptionsToRender{ 
+  animation:pulseBorder8 1.2s infinite ease-in-out;
+  border-radius: 100%; 
+}
+
+
+@keyframes pulseBorder8 {
+  0% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 1); 
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 1); 
+  }
+  100% {
+    box-shadow: 0 0 0 1px rgb(255, 255, 255); 
+  }
 }
