@@ -1,4 +1,3 @@
-/* Основной контейнер страницы */
 .wrapper {
   display: flex;
   height: 100vh;
@@ -8,7 +7,6 @@
   padding: 16px;
 }
 
-/*  Левая панель  */
 .sidebar {
   width: 40%;
   display: flex;
@@ -75,7 +73,6 @@
   display: flex;
 }
 
-/*  Правая панель  */
 .main {
   width: 60%;
   background: var(--bg-secondary);
@@ -86,7 +83,6 @@
   border-radius: 40px;
 }
 
-/* Верхняя панель */
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -127,55 +123,11 @@
 .image {
   object-fit: contain;
 }
+
 .generatedGrid_wrapper {
-  width: 100%;
+  padding-top: 45px;
   display: flex;
   justify-content: center;
-  margin-top: 43px;
-  overflow-y: auto;
-  height: 100%;
-}
-
-.generatedGrid {
-    flex-flow: column wrap;
-    gap: 12px;
-    max-width: 80%;
-    display: flex;
-    align-content: center;
-}
-
-.gridItem {
-  max-width: 40%;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: flex-start;
+      height: 100%;
 }
  
-.generatedGrid:has(.gridItem:only-child) {
-  flex-direction: row;  
-  justify-content: center;
-        height: fit-content;
-}
-
-.generatedGrid:has(.gridItem:only-child) .gridItem {
-  max-width: 100%;
-
-}
-
-.gridItem_title {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 1%;
-  color: var(--text-secondary);
-  text-align: center;
-}
-
-.gridImage {
-  border-radius: 12px;
-  width: 100%;
-  height: auto;
-  display: block;
-}

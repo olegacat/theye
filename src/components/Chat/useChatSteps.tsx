@@ -76,8 +76,7 @@ const resumeSteps = useCallback((delay?: number) => {
         setCurrentStepIndex(i => i + 1);
       }
     } else if (step.type === "openResizeModal") {
-      setIsModalResizeOpen(true);
-      setIsPaused(true); //   ставим паузу
+      setIsModalResizeOpen(true); 
     }
 
  else if (step.type === "thinking") {

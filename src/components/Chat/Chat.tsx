@@ -13,6 +13,7 @@ import { ModalResize } from "./ModalResize/ModalResize";
 import LargeRectangle from "@/assets/optionResizeImages/LargeRectangle300x250px.svg";
 import SmallSquare from "@/assets/optionResizeImages/SmallSquare300x300px.svg";
 import Skyscraper from "@/assets/optionResizeImages/Skyscraper1200x300px.svg";
+import { BannerGrid } from "../BannerGrid/BannerGrid";
 
 
 export type StepType = "left" | "right" | "openResizeModal" | "thinking";
@@ -27,6 +28,7 @@ export interface ISizesToShow {
   size: string;
   image: string;
 }
+
 export const steps: Step[] = [
   {
     type: "left",
@@ -52,12 +54,12 @@ const options = [
     items: [
       {
         name: "Large Rectangle",
-        size: "300 x 250px",
+        size: "427 x 317",
         image: LargeRectangle,
       },
       {
         name: "Small Square",
-        size: "1200 x 300px",
+        size: "312 x 312",
         image: SmallSquare,
       },
     ],
@@ -67,7 +69,7 @@ const options = [
     items: [
       {
         name: "Skyscraper",
-        size: "1200 x 300px",
+        size: "768 x 202",
         image: Skyscraper,
       },
     ],
@@ -218,24 +220,21 @@ export const Chat = () => {
 
         {/* поле для баннеров */}
         {isGenerating ? (     <div className={styles.generatedGrid_wrapper}>
-          <div className={styles.generatedGrid}>
-            {sizesToShow.map((banner, idx) => (
+ 
+            {/* {sizesToShow.map((banner, idx) => (
               <div key={idx} className={styles.gridItem}>
                     <div className={styles.gridItem_title}>
-                     { banner.name}
+                     { banner.name} {banner.size}
                           </div>
                 <Image
                   src={banner.image}
-                  alt={banner.name}
-                  width={parseInt(banner.size.split("x")[0].trim())}  
-                  height={parseInt(
-                    banner.size.split("x")[1].replace("px", "").trim()
-                  )} 
+                  alt={banner.name} 
                   className={styles.gridImage}
                 />
               </div>
-            ))}
-          </div>
+            ))} */}
+
+            <BannerGrid/> 
           </div>
         ) : (
           <div className={styles.banner}>

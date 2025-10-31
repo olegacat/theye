@@ -48,7 +48,9 @@ export const ChatInputArea: React.FC<IChatInputArea> = ({onClickResize, sendResi
 
         <div className={styles.selected_sizes_option}  key={e}>
           {e}
-          <IconButton name={"CrossIcon8px"} onClick={() => deleteSelectedSize(e)}/>
+          <IconButton name={"CrossIcon8px"} onClick={
+            undefined // () => deleteSelectedSize(e) 
+            }/>
         </div>)
 )}
 </div>

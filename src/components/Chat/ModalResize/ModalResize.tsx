@@ -101,7 +101,7 @@ export const ModalResize: React.FC<IModalResize> = ({
         ))}
         <button
           className={`${styles.modalresize_add_btn} ${
-            selectedSizes.length > 0 ? styles.active : null
+            selectedSizes.length === 3 ? styles.active : null
           }`}
           onClick={chooseResizeOptions}
         >
