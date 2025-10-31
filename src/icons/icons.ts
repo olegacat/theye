@@ -4,6 +4,7 @@ import { CrossIcon8px } from "./svg/CrossIcon8px"
 import { ExportIcon } from "./svg/ExportIcon"
 import { MenuBtn } from "./svg/MenuBtn"
 import { PlayIcon } from "./svg/PlayIcon"
+import { PlayIconHover } from "./svg/PlayIconHover"
 import { PlusIcon } from "./svg/PlusIcon"
 import { RefreshIcon } from "./svg/RefreshIcon"
 import { ResizeIcon } from "./svg/ResizeIcon"
@@ -30,7 +31,8 @@ Search,
 CheckIcon,
 PlusIcon,
 CrossIcon8px,
-TwoStartsIcon
+TwoStartsIcon,
+PlayIconHover
 }
 
 

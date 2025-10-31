@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Icon from "@/icons/Icon";
 import Btn from "../Btns/Btn/Btn";
@@ -16,7 +16,7 @@ import Skyscraper from "@/assets/optionResizeImages/Skyscraper1200x300px.svg";
 import { BannerGrid } from "../BannerGrid/BannerGrid";
 
 
-export type StepType = "left" | "right" | "openResizeModal" | "thinking";
+export type StepType = "left" | "right" | "openResizeModal" | "thinking" | "animateResize";
 export interface Step {
   type: StepType;
   message?: string;
@@ -44,6 +44,10 @@ export const steps: Step[] = [
     type: "left",
     message:
       "I generated the resizes you requested – check if you like everything. If there's anything you want to adjust, let me know.",
+    delay: 100,
+  },
+   {
+    type: "animateResize", 
     delay: 1000,
   },
 ];
@@ -86,6 +90,11 @@ export const Chat = () => {
   // стейты результатов модалки выбора размеров в чате
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [sizesToShow, setSizesToShow] = useState<ISizesToShow[]>([]);
+
+  //стейт Анимейт
+  const [isAnimateResize, setIsAnimateResize] = useState<boolean>(false);
+  const [chatText, setChatText] = useState<string>('')
+  const [isAnimatingDesigns, setIsAnimatingDesigns] = useState<boolean>(false);
 
   // хук для получения результатов шагов
   const { messages, resumeSteps, currentStepIndex } = useChatSteps({
@@ -133,7 +142,7 @@ export const Chat = () => {
 
       const thinkingStep: Step = {
         type: "thinking",
-        message: message,
+        message: `Resizing ${message}`,
         delay: 3000,
       };
 
@@ -157,6 +166,47 @@ export const Chat = () => {
       setIsGenerating(true);
     }
   };
+
+  //animate flow
+
+  useEffect(()=> {
+    if(steps[currentStepIndex]?.type === "animateResize"){
+      setIsAnimateResize(true)
+    }
+  }, [currentStepIndex])
+
+   useEffect(()=> {
+    if(chatText.length > 0){
+      setIsAnimateResize(false)
+    }
+  }, [chatText])
+
+
+  const sendAnimationToCreate = () => {
+    setChatText('')
+    
+          const thinkingStep: Step = {
+        type: "thinking",
+        message: 'Animate all headlines...',
+        delay: 3000,
+      };
+
+      steps.splice(currentStepIndex + 1, 0, thinkingStep);
+
+
+     const dynamicStep: Step = {
+        type: "left",
+        message: `I applied animation to all the banners! If you want to make any changes or start the export, just let me know!`,
+        delay: 1000,
+      };
+      steps.splice(currentStepIndex + 2, 0, dynamicStep);
+    
+      resumeSteps(steps[currentStepIndex].delay ?? 0);
+
+      setIsAnimatingDesigns(true)
+
+  }
+
 
   return (
     <div className={styles.wrapper}>
@@ -194,10 +244,13 @@ export const Chat = () => {
             steps[currentStepIndex]?.type === "openResizeModal" &&
             selectedSizesChat.length > 0
               ? sendResizeOptionsToRender
-              : undefined
+              : ( chatText.length > 0) ? sendAnimationToCreate : undefined 
           }
           selectedSizesChat={selectedSizesChat}
           setSelectedSizesChat={setSelectedSizesChat}
+          isAnimateResize={isAnimateResize}
+          chatText={chatText}
+          setChatText={setChatText}
         />
       </div>
 
@@ -232,9 +285,9 @@ export const Chat = () => {
                   className={styles.gridImage}
                 />
               </div>
-            ))} */}
+            ))} */} 
 
-            <BannerGrid/> 
+            <BannerGrid isAnimatingDesigns = {isAnimatingDesigns} setIsAnimatingDesigns = {setIsAnimatingDesigns}/> 
           </div>
         ) : (
           <div className={styles.banner}>

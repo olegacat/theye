@@ -11,12 +11,19 @@ interface IChatInputArea {
   sendResizeOptionsToRender?: ()=> void;
   setSelectedSizesChat:(value: string[])=> void;
   selectedSizesChat: string[];
+  isAnimateResize: boolean;
+  chatText?:string;
+  setChatText:(value:string)=> void
 }
 
 
-export const ChatInputArea: React.FC<IChatInputArea> = ({onClickResize, sendResizeOptionsToRender, setSelectedSizesChat, selectedSizesChat }) => {
+export const ChatInputArea: React.FC<IChatInputArea> = ({onClickResize, sendResizeOptionsToRender, setSelectedSizesChat, selectedSizesChat, isAnimateResize, chatText, setChatText }) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+
+  const setTextFromAnimate = () => {
+      setChatText('Animate all resizes: smooth floating headphones, popping price “349$”, fading crossed “449$”, pulsing “32% sale” badge, purple blinking bg')
+  }
 
   const handleInput = () => {
     const el = textareaRef.current;
@@ -35,14 +42,33 @@ export const ChatInputArea: React.FC<IChatInputArea> = ({onClickResize, sendResi
         setSelectedSizesChat([...newSelectedSizes])
   }
 
+  
+
+  //стиль кнопки отправить
+
+  const SendIcon = (chatText && chatText?.length > 0)
+  ? styles.sendResizeOptionsToRender
+  : sendResizeOptionsToRender
+  ? styles.sendResizeOptionsToRender
+  : null;
+
+
 
   return (
     <div className={styles.inputArea}>
+
+{(chatText && chatText?.length > 0) && (
+  <div className={styles.mockupChat}>
+       {chatText}
+  </div>
+)
+}
 
           <div className={`${styles.inputArea_selected_sizes} ${selectedSizesChat.length > 0 ? styles.active : null}`}>
              <div className={styles.selected_sizes_title}>
             <Icon name={"ResizeIcon"}/>Add Resizes:
              </div>
+          
             <div className={styles.selected_sizes_wrapper}>
       {selectedSizesChat?.map((e)=>(
 
@@ -55,7 +81,9 @@ export const ChatInputArea: React.FC<IChatInputArea> = ({onClickResize, sendResi
 )}
 </div>
 </div>
-{selectedSizesChat.length === 0 && 
+
+
+{(selectedSizesChat.length === 0 && chatText?.length === 0)  && 
       <textarea
         ref={textareaRef}
         className={styles.input}
@@ -66,9 +94,9 @@ export const ChatInputArea: React.FC<IChatInputArea> = ({onClickResize, sendResi
       <div className={styles.inputArea_actions}>
         <div className={styles.buttons}>
           <Btn className={styles.addResize} onClick={onClickResize}><Icon name="ResizeIcon" cursor="pointer" /> Add Resize</Btn>
-          <Btn className={styles.animate} ><Icon name="AnimateIcon" cursor="pointer"/> Animate</Btn>
+          <Btn className={`${styles.animate} ${isAnimateResize? styles.pulse: null}`} onClick={isAnimateResize? setTextFromAnimate:undefined} ><Icon name="AnimateIcon" cursor="pointer"/> Animate</Btn>
         </div>
-               <IconButton onClick={sendResizeOptionsToRender} name="SendIcon" className={`${sendResizeOptionsToRender? styles.sendResizeOptionsToRender: null}`}/> 
+               <IconButton onClick={sendResizeOptionsToRender} name="SendIcon" className={`${SendIcon}`}/> 
       </div>
     </div>
   );

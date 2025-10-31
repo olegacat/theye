@@ -56,7 +56,7 @@ export const MessageThinking: React.FC<MessageLeftProps> = ({ message, onFinishe
 
   return (
     <div className={styles.message_thinking_wrapper}>
-     <Icon name={"TwoStartsIcon"}/> <div className={styles.message}>Resizing {displayedText}...</div> 
+     <Icon name={"TwoStartsIcon"}/> <div className={styles.message}>{displayedText}...</div> 
     </div>
   );
 };

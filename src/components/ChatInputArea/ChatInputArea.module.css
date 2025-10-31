@@ -80,6 +80,9 @@
   background-color: var(--control-secondary);
 }
 
+.pulse{ 
+  animation:pulseBorder8 1.2s infinite ease-in-out; 
+}
 
 .sendResizeOptionsToRender{ 
   animation:pulseBorder8 1.2s infinite ease-in-out;
@@ -96,5 +99,37 @@
   }
   100% {
     box-shadow: 0 0 0 1px rgb(255, 255, 255); 
+  }
+}
+
+
+
+.mockupChat {
+  display: inline-block;      
+  white-space: pre-wrap;      
+  line-height: 1.2;            
+}
+
+
+.mockupChat::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  background: currentColor;
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2; 
+  }
+  100% {
+    opacity: 1;
   }
 }
